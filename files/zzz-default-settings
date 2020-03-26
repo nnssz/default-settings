@@ -32,8 +32,8 @@ ln -sf /sbin/ip /usr/bin/ip
 sed -i 's/downloads.openwrt.org\/snapshots\/targets/127.0.0.1\/snapshots\/targets/g' /etc/opkg/distfeeds.conf
 sed -i 's/downloads.openwrt.org/mirrors.zju.edu.cn\/openwrt/g' /etc/opkg/distfeeds.conf
 sed -i 's/http:\/\/mirrors/https:\/\/mirrors/g' /etc/opkg/distfeeds.conf
-mv www/snapshots/ipkg-make-index.sh www/snapshots/targets/*/*/packages
-cd www/snapshots/targets/*/*/packages
+mv /www/snapshots/ipkg-make-index.sh /www/snapshots/targets/*/*/packages
+cd /www/snapshots/targets/*/*/packages
 chmod +x ipkg-make-index.sh
 ./ipkg-make-index.sh . > Packages
 gzip -c Packages > Packages.gz
